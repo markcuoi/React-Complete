@@ -1,9 +1,9 @@
 .header {
-  max-width: 1400px;
-  margin: auto;
+  height: 70px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 
   .logo-container {
     height: 100%;
@@ -12,8 +12,11 @@
   }
 
   .options {
+    width: 50%;
+    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
     .option {
       padding: 10px 15px;
