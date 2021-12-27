@@ -9,7 +9,7 @@ export const fetchCollectionsStart = () => ({
 });
 
 export const fetchCollectionsSuccess = (collectionMap) => ({
-  type: ShopActionType.FETCH_COLLECTIONS_SUCESS,
+  type: ShopActionType.FETCH_COLLECTIONS_SUCCESS,
   payload: collectionMap,
 });
 
@@ -18,17 +18,17 @@ export const fetchCollectionsFailure = (errorMessage) => ({
   payload: errorMessage,
 });
 
-export const fetchCollectionsStartAsync = () => {
-  return (dispatch) => {
-    const collectionRef = firestore.collection("collections");
-    dispatch(fetchCollectionsStart());
+// export const fetchCollectionsStartAsync = () => {
+//   return (dispatch) => {
+//     const collectionRef = firestore.collection("collections");
+//     dispatch(fetchCollectionsStart());
 
-    collectionRef
-      .get()
-      .then((snapshot) => {
-        const collectionMap = convertCollectionsSnapshotToMap(snapshot);
-        dispatch(fetchCollectionsSuccess(collectionMap));
-      })
-      .catch((error) => dispatch(fetchCollectionsFailure(error.message)));
-  };
-};
+//     collectionRef
+//       .get()
+//       .then((snapshot) => {
+//         const collectionMap = convertCollectionsSnapshotToMap(snapshot);
+//         dispatch(fetchCollectionsSuccess(collectionMap));
+//       })
+//       .catch((error) => dispatch(fetchCollectionsFailure(error.message)));
+//   };
+// };

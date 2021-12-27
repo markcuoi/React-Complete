@@ -12,6 +12,9 @@ const config = {
   measurementId: "G-X0EGZKCGJ0",
 };
 
+// Initialize Firebase
+firebase.initializeApp(config);
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
   const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -49,6 +52,7 @@ export const addCollectionAndDocuments = async (
   return await batch.commit();
 };
 
+// function to convert firebase original data to modified data obj for component
 export const convertCollectionsSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {
     const { title, items } = doc.data();
@@ -61,13 +65,12 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     };
   });
 
+  // transfer modified array to obj
   return transformedCollection.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;
   }, {});
 };
-
-firebase.initializeApp(config);
 
 export const getCurrentUser = () => {
   return new Promise((resolve, reject) => {

@@ -12,7 +12,10 @@ import {
 } from "./collection.styles";
 
 const CollectionPage = ({ collection }) => {
+  // fix for refresh page, but using spinner
+  // if (!collection) return null;
   const { title, items } = collection;
+
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>
