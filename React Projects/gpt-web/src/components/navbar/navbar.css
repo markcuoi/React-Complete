@@ -1,0 +1,131 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem;
+}
+
+.navbar__links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar__logo img {
+  width: 62.56px;
+  height: 16.02px;
+}
+
+.navbar__list {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar__links p,
+.navbar__sign p,
+.navbar__dropdown p {
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.navbar__sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dropdown__container button,
+.navbar__sign button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #ff4820;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.navbar__dropdown {
+  display: none;
+  position: relative;
+  margin-left: 1rem;
+}
+
+.navbar__dropdown svg {
+  cursor: pointer;
+}
+
+.dropdown__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: end;
+  background: var(--color-footer);
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+
+  position: absolute;
+  right: 0;
+  top: 40px;
+  margin-top: 1rem;
+  min-width: 210px;
+}
+
+.dropdown__container p {
+  margin: 1rem 0;
+}
+
+.dropdown__sign {
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .navbar__list {
+    display: none;
+  }
+
+  .navbar__dropdown {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    padding: 2rem 4rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar {
+    padding: 2rem;
+  }
+
+  .navbar__sign {
+    display: none;
+  }
+
+  .dropdown__container {
+    top: 20px;
+  }
+
+  .dropdown__sign {
+    display: block;
+  }
+  .dropdown__sign p {
+    margin-top: 0;
+  }
+}
